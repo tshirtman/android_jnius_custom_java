@@ -1,0 +1,24 @@
+FloatLayout:
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: .5, .5
+        pos_hint: {'center': (.5, .5)}
+        spacing: '20dp'
+
+        Label:
+            text: 'Please enter your name'
+
+        TextInput:
+            id: ti
+            multiline: False
+            size_hint_y: None
+            height: self.minimum_height
+
+        Button:
+            text: 'hit me!'
+            on_release: app.test_jnius(ti.text)
+            size_hint_y: None
+            height: '38dp'
+
+        Label:
+            id: result_box

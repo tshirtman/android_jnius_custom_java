@@ -1,0 +1,22 @@
+<project>
+    <property name="ant.build.javac.source" value="1.7" />
+    <property name="ant.build.javac.target" value="1.7" />
+
+    <target name="clean">
+      <delete dir="build"/>
+    </target>
+
+    <target name="test-compile">
+        <mkdir dir="build"/>
+        <javac srcdir="java/" destdir="build"
+               includeantruntime='false'
+               encoding="UTF-8"/>
+    </target>
+
+    <target name="jar" depends="test-compile">
+        <jar destfile="build/org.test.jar" basedir="build/">
+        </jar>
+    </target>
+
+    <target name="all" depends="jar,test-compile"/>
+</project>
